@@ -25,8 +25,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - run: chmod +x ./gradlew       # ✅ 添加这行
-      - run: ./gradlew assembleDebug  # ✅ 这行现在能运行了
+      - run: chmod +x ./gradlew        # 关键修复：添加执行权限
+      - run: ./gradlew assembleDebug
 
       - uses: actions/upload-artifact@v4
         with:
